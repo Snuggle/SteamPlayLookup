@@ -21,9 +21,9 @@ class SteamPlayLookup:
         print("Now outputting to your file...")
         OutputFile = open(PathList[1], 'w')
         for ID in OutputList: # Write each AppID to the output text-file.
-            OutputFile.write(f"{ID}\n")
+            OutputFile.write('{}\n'.format(ID))
 
-        print(f"Finished.")
+        print("Finished.")
 
     # Function to lookup a game's title within the JSON blob from Steam's API.
     def lookup(self, lookup_list, api_json):
@@ -34,7 +34,7 @@ class SteamPlayLookup:
                 if app['name'].lower().strip() == game.lower().strip(): # Clean whitespace, case-insensitive etc.
                     currentAppID = app['appid'] # If game is found in API, get the appid.
                     break
-            print(f"{currentAppID} - {game}")
+            print("{currentAppID} - {game}".format(currentAppID, game))
             OutputList.append(currentAppID)
 
         return OutputList
