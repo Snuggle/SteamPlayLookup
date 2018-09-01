@@ -21,8 +21,7 @@ class SteamPlayLookup:
         print("Now outputting to your file...")
         OutputFile = open(PathList[1], 'w')
         for ID in OutputList: # Write each AppID to the output text-file.
-            OutputFile.write('{}'.format(ID))
-            OutputFile.write("\n")
+            OutputFile.write('{}\n'.format(ID))
 
         print("Finished.")
 
@@ -35,7 +34,7 @@ class SteamPlayLookup:
                 if app['name'].lower().strip() == game.lower().strip(): # Clean whitespace, case-insensitive etc.
                     currentAppID = app['appid'] # If game is found in API, get the appid.
                     break
-            print("{currentAppID} - {game}".format(currentAppID=currentAppID,game=game))
+            print("{currentAppID} - {game}".format(currentAppID, game))
             OutputList.append(currentAppID)
 
         return OutputList
