@@ -34,7 +34,7 @@ class SteamPlayLookup:
                 if app['name'].lower().strip() == game.lower().strip(): # Clean whitespace, case-insensitive etc.
                     currentAppID = app['appid'] # If game is found in API, get the appid.
                     break
-            print("{currentAppID} - {game}".format(currentAppID, game))
+            print("{} - {}".format(currentAppID, game))
             OutputList.append(currentAppID)
 
         return OutputList
